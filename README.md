@@ -16,7 +16,7 @@ Note: email/password combinations for existing users populated by `bin/setup` ca
 
 ```
 On the index page the names should be links
-Clicking link brings users to show page
+X Clicking link brings users to show page
 ```
 
 **Users can edit people**
