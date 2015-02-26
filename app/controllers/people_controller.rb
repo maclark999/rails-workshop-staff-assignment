@@ -20,4 +20,22 @@ class PeopleController < ApplicationController
   def show
     @person = Person.find(params[:id])
   end
+
+  def edit
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    @person = Person.find(params[:id])
+    if @person.update_attributes(person_params)
+      redirect_to @person, notice: 'Person was successfully updated'
+    else
+      render 'new', alert: 'Update was unsuccessful'
+    end
+  end
+
+  private
+  def person_params
+    params.require(:person).permit(:first_name, :last_name, :title)
+  end
 end
